@@ -9,22 +9,18 @@ import {
   ScrollView,
   Alert,
 } from 'react-native';
-import { Ionicons } from '@expo/vector-icons'; // Certifique-se de ter instalado
+import { Ionicons } from '@expo/vector-icons';
 
 const App = () => {
-  // 4. Uso do Hook useState
   const [nome, setNome] = useState('');
   const [curso, setCurso] = useState('');
   const [disciplina, setDisciplina] = useState('');
   const [descricao, setDescricao] = useState('');
 
-  // Estado para armazenar e exibir os dados após o envio
   const [dadosEnviados, setDadosEnviados] = useState(null);
 
-  // 6. Uso do Hook useEffect
   useEffect(() => {
     console.log('Aplicativo de Cadastro Profissional iniciado!');
-    // Você poderia carregar dados aqui, se necessário.
   }, []);
 
   const handleEnviar = () => {
@@ -40,8 +36,6 @@ const App = () => {
       descricao,
     });
   };
-
-  // Função para limpar o formulário e os dados enviados
   const handleLimpar = () => {
     setNome('');
     setCurso('');
@@ -51,16 +45,15 @@ const App = () => {
   };
 
   return (
-    // 1. SafeAreaView como container principal
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContent}>
-        {/* Cabeçalho */}
+        {}
         <View style={styles.header}>
           <Text style={styles.titulo}>Formulário de Cadastro</Text>
           <Text style={styles.subtituloHeader}>Preencha suas informações acadêmicas</Text>
         </View>
 
-        {/* 2. Formulário de Cadastro em um Card */}
+        {}
         <View style={styles.formCard}>
           <View style={styles.inputGroup}>
             <View style={styles.labelRow}>
@@ -116,14 +109,14 @@ const App = () => {
             />
           </View>
 
-          {/* 3. Botão de Envio */}
+          {}
           <View style={styles.buttonGroup}>
             <Button title="Enviar Dados" onPress={handleEnviar} color="#6200EE" />
             <Button title="Limpar" onPress={handleLimpar} color="#B00020" />
           </View>
         </View>
 
-        {/* 5. Exibição dos Dados após envio */}
+        {}
         {dadosEnviados && (
           <View style={styles.resultadoContainer}>
             <View style={styles.resultadoHeaderRow}>
@@ -167,7 +160,6 @@ const App = () => {
   );
 };
 
-// 7. Estilização Básica com StyleSheet
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -196,8 +188,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
     padding: 20,
     borderRadius: 12,
-    elevation: 4, // Sombra para Android
-    shadowColor: '#000', // Sombra para iOS
+    elevation: 4,
+    shadowColor: '#000', 
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
